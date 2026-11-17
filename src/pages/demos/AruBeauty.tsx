@@ -52,13 +52,8 @@ export function AruBeauty() {
     );
     gsap.fromTo(
       root.querySelector(".aru__stage"),
-      { opacity: 0, y: 24, rotate: 1.5 },
-      { opacity: 1, y: 0, rotate: 0, duration: 0.95, ease: "power3.out" },
-    );
-    gsap.fromTo(
-      root.querySelector(".aru__phone"),
-      { y: 40, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.85, delay: 0.18, ease: "power3.out" },
+      { opacity: 0, y: 24 },
+      { opacity: 1, y: 0, duration: 0.95, ease: "power3.out" },
     );
   }, [brand.name, brand.accent]);
 
@@ -69,7 +64,7 @@ export function AruBeauty() {
 
   return (
     <div className="aru" style={{ ["--accent" as string]: brand.accent }}>
-      <div className="aru__topbar">
+      <div className="aru__chrome">
         <Link className="aru__back" to="/">
           ← KazSaq
         </Link>
@@ -94,8 +89,8 @@ export function AruBeauty() {
           </h1>
           <p className="aru-fade">{brand.tagline}</p>
           <div className="aru__actions aru-fade">
-            <a className="aru__btn aru__btn--primary" href={waLink(brand.whatsapp)} target="_blank" rel="noreferrer">
-              Записаться
+            <a className="aru__btn aru__btn--primary" href="#services">
+              Смотреть услуги
             </a>
             <a className="aru__btn aru__btn--ghost" href={`tel:${brand.phone}`}>
               {brand.phone}
@@ -110,15 +105,24 @@ export function AruBeauty() {
             <div className="aru__phone-bar" />
             <h3>Выберите время</h3>
             <p>Услуга уже выбрана · мастер свободен</p>
-            <div className="aru__slot">14:00 <span>занято</span></div>
-            <div className="aru__slot is-on">15:30 <span>свободно</span></div>
-            <div className="aru__slot">17:00 <span>свободно</span></div>
+            <div className="aru__slot">
+              14:00 <span>занято</span>
+            </div>
+            <div className="aru__slot is-on">
+              15:30 <span>свободно</span>
+            </div>
+            <div className="aru__slot">
+              17:00 <span>свободно</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="aru__section">
-        <h2>Услуги</h2>
+      <section className="aru__section" id="services">
+        <h2>Услуги и цены</h2>
+        <p className="aru__section-lead">
+          Прайс не прячется в хайлайтах. Клиент видит длительность, мастера и стоимость сразу.
+        </p>
         <div className="aru__services">
           {SERVICES.map((s) => (
             <article className="aru__service" key={s.title}>
@@ -131,6 +135,60 @@ export function AruBeauty() {
           ))}
         </div>
       </section>
+
+      <section className="aru__section">
+        <h2>Мастера</h2>
+        <p className="aru__section-lead">Гость выбирает не «кого-то», а конкретного специалиста.</p>
+        <div className="aru__masters">
+          <article className="aru__master">
+            <b>Айгерим</b>
+            <p>Стрижки и укладки · стаж 6 лет · рейтинг 4.9</p>
+          </article>
+          <article className="aru__master">
+            <b>Дария</b>
+            <p>Маникюр и покрытие · свободные окна сегодня</p>
+          </article>
+          <article className="aru__master">
+            <b>Сабина</b>
+            <p>Колорист · сложные окрашивания</p>
+          </article>
+          <article className="aru__master">
+            <b>Лера</b>
+            <p>Брови и ресницы · экспресс 45 минут</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="aru__section">
+        <h2>Как проходит запись</h2>
+        <p className="aru__section-lead">Три шага — и администратор свободен от переписки.</p>
+        <div className="aru__flow">
+          <div className="aru__flow-step">
+            <b>01</b>
+            <p>Клиент выбирает услугу и мастера</p>
+          </div>
+          <div className="aru__flow-step">
+            <b>02</b>
+            <p>Берёт свободный слот — например 15:30</p>
+          </div>
+          <div className="aru__flow-step">
+            <b>03</b>
+            <p>Вам приходит уведомление в WhatsApp</p>
+          </div>
+        </div>
+        <div style={{ marginTop: 20 }}>
+          <a className="aru__btn aru__btn--primary" href={waLink(brand.whatsapp)} target="_blank" rel="noreferrer">
+            Записаться
+          </a>
+        </div>
+      </section>
+
+      <footer className="aru__footer">
+        <span>
+          {brand.name} · {brand.city}
+        </span>
+        <span>Концепт KazSaq · не реальный клиент</span>
+      </footer>
 
       <CustomizeDrawer
         open={open}

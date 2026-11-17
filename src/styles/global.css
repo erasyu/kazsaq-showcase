@@ -2,14 +2,14 @@
   --ink: #0b1220;
   --ink-2: #131c2e;
   --paper: #f7f5f0;
-  --line-dark: #26324a;
+  --line-dark: #3a4a66;
   --on-ink: #f5f7fa;
-  --on-ink-muted: #a9b4c6;
+  --on-ink-muted: #c5d0e0;
   --sky: #38bdf8;
   --sky-deep: #0369a1;
   --gold: #f2c14e;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --font-display: "Unbounded", system-ui, sans-serif;
+  --font-display: "Manrope", system-ui, sans-serif;
   --font-text: "Manrope", system-ui, sans-serif;
   color-scheme: dark;
 }
@@ -33,8 +33,9 @@ html {
 body {
   margin: 0;
   font-family: var(--font-text);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 500;
   background: var(--ink);
   color: var(--on-ink);
   -webkit-font-smoothing: antialiased;
@@ -56,6 +57,15 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
 }
 
 :focus-visible {

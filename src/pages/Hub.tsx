@@ -85,8 +85,8 @@ export function Hub() {
           </span>
         </h1>
         <p className="hub__lead hub-fade">
-          Откройте концепт, подставьте название своего бизнеса и покажите команде — так будет
-          выглядеть ваш продукт. Без обязательств.
+          Живые концепты под ваш бизнес: откройте демо, подставьте название и цвет — и отправьте
+          ссылку клиенту. Так выглядит продукт до договора, без риска.
         </p>
         <div className="hub__cta-row hub-fade">
           <button type="button" className="hub__cta hub__cta--primary" onClick={() => setTab("demos")}>
@@ -103,31 +103,44 @@ export function Hub() {
       </div>
 
       <section className="hub__panel" aria-live="polite">
-        <div className="hub__panel-inner" ref={panelRef} key={tab}>
+        <div ref={panelRef} key={tab}>
           {tab === "team" && (
-            <div className="hub__grid">
-              <article className="hub__card">
-                <h2>KazSaq dev team</h2>
-                <p>
-                  Разрабатываем сайты, чат-боты и приложения для малого и среднего бизнеса.
-                  Работаем официально через ИП, проекты курируют наставники университета. 50%
-                  дохода идёт на студенческую лабораторию беспилотников МИТУ.
-                </p>
-                <div className="hub__stats">
-                  <div className="hub__stat">
-                    <b>3 дня</b>
-                    <span>бесплатный прототип</span>
-                  </div>
-                  <div className="hub__stat">
-                    <b>от 29k ₸</b>
-                    <span>помесячно, без полной предоплаты</span>
-                  </div>
-                  <div className="hub__stat">
-                    <b>50%</b>
-                    <span>на лабораторию дронов</span>
-                  </div>
+            <div className="hub__card">
+              <h2>KazSaq dev team</h2>
+              <p>
+                Делаем сайты, чат-боты и приложения для малого и среднего бизнеса. Работаем через
+                ИП, проекты курируют наставники университета. Половина дохода идёт в лабораторию
+                беспилотников МИТУ — поэтому каждый заказ двигает и бизнес клиента, и инженерную
+                школу.
+              </p>
+              <div className="hub__stats">
+                <div className="hub__stat">
+                  <b>3 дня</b>
+                  <span>бесплатный прототип</span>
                 </div>
-              </article>
+                <div className="hub__stat">
+                  <b>от 29 000 ₸</b>
+                  <span>помесячно, без полной предоплаты</span>
+                </div>
+                <div className="hub__stat">
+                  <b>50%</b>
+                  <span>на лабораторию дронов</span>
+                </div>
+              </div>
+              <div className="hub__pillars">
+                <div className="hub__pillar">
+                  <b>Сайты</b>
+                  <p>Лендинги, бизнес-сайты и магазины с Kaspi Pay, двуязычием и правками каждый месяц.</p>
+                </div>
+                <div className="hub__pillar">
+                  <b>Боты</b>
+                  <p>Запись, прайс, оплата и CRM. Клиент пишет ночью — бот отвечает сразу.</p>
+                </div>
+                <div className="hub__pillar">
+                  <b>Приложения</b>
+                  <p>CRM и мобильные сервисы на Flutter: роли, пуши, еженедельный прогресс.</p>
+                </div>
+              </div>
             </div>
           )}
 
@@ -139,7 +152,15 @@ export function Hub() {
                   <ConceptBadge />
                 </div>
                 <h3>Dala Coffee</h3>
-                <p>Меню, бронь столика, тёплый editorial-hero. Можно переименовать под вашу кофейню.</p>
+                <p>
+                  Полноценный лендинг: hero, меню, бронь стола, атмосфера зала. Переименуйте под
+                  свою кофейню и покажите владельцу.
+                </p>
+                <div className="demo-card__features">
+                  <span className="demo-card__chip">Меню</span>
+                  <span className="demo-card__chip">Бронь</span>
+                  <span className="demo-card__chip">WhatsApp</span>
+                </div>
                 <div className="demo-card__actions">
                   <Link className="demo-card__link" to="/demo/dala-coffee">
                     Открыть демо
@@ -153,7 +174,15 @@ export function Hub() {
                   <ConceptBadge />
                 </div>
                 <h3>Aru Beauty</h3>
-                <p>Лендинг записи: услуги, мастера, слоты. Подставьте свой салон или барбершоп.</p>
+                <p>
+                  Лендинг записи: услуги, мастера, слоты, напоминания. Подставьте салон или
+                  барбершоп — клиент сразу видит «своё».
+                </p>
+                <div className="demo-card__features">
+                  <span className="demo-card__chip">Слоты</span>
+                  <span className="demo-card__chip">Услуги</span>
+                  <span className="demo-card__chip">Мастера</span>
+                </div>
                 <div className="demo-card__actions">
                   <Link className="demo-card__link" to="/demo/aru-beauty">
                     Открыть демо
@@ -165,10 +194,10 @@ export function Hub() {
 
           {tab === "how" && (
             <article className="hub__card">
-              <h2>Как показать клиенту</h2>
+              <h2>Как показать клиенту за 2 минуты</h2>
               <p>
-                Отправьте ссылку на демо. Внутри нажмите «Под себя» — имя, цвет, телефон и WhatsApp
-                сохраняются в ссылке. Можно сразу переслать готовый вариант владельцу бизнеса.
+                Не нужно объяснять «мы сделаем сайт». Откройте демо на телефоне, нажмите «Под себя»,
+                впишите название бизнеса — и отправьте готовую ссылку. Параметры остаются в URL.
               </p>
               <div className="how-steps">
                 <div className="how-step">
@@ -177,16 +206,36 @@ export function Hub() {
                 </div>
                 <div className="how-step">
                   <b>02</b>
-                  <p>Отредактируйте бренд прямо в демо.</p>
+                  <p>Отредактируйте бренд, цвет и WhatsApp.</p>
                 </div>
                 <div className="how-step">
                   <b>03</b>
-                  <p>Скопируйте URL из адресной строки и отправьте.</p>
+                  <p>Скопируйте URL и отправьте владельцу.</p>
                 </div>
               </div>
+              <p className="hub__note">
+                Все кейсы — концепт-проекты. Мы не выдаём их за реальных клиентов.
+              </p>
             </article>
           )}
         </div>
+      </section>
+
+      <section className="hub__strip" aria-label="Дополнительно">
+        <article className="hub__strip-card">
+          <h3>Что чувствует клиент</h3>
+          <p>
+            Не PDF и не скрин из Figma — рабочая страница с анимациями, кнопками и записью. Легче
+            сказать «да» после того, как увидел свой бренд на экране.
+          </p>
+        </article>
+        <article className="hub__strip-card">
+          <h3>Дальше после демо</h3>
+          <p>
+            Бесплатный прототип за 3 дня на данных клиента, затем договор и помесячный запуск. Цены
+            и скрипты — у команды в Instagram @saq_dev_team.
+          </p>
+        </article>
       </section>
 
       <footer className="hub__footer">

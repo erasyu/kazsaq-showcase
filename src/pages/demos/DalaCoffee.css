@@ -1,16 +1,17 @@
 .dala {
-  --cream: #f6efe6;
-  --paper: #fffbf5;
-  --esp: #2b1d14;
+  --cream: #f3ebe1;
+  --paper: #fffdf9;
+  --esp: #24180f;
   --accent: #b85a33;
-  --muted: #6e5d50;
-  --line: #e7dacb;
+  --muted: #5a4638;
+  --line: #d9cbb8;
   min-height: 100vh;
   background: var(--cream);
   color: var(--esp);
+  font-weight: 560;
 }
 
-.dala__topbar {
+.dala__chrome {
   position: sticky;
   top: 0;
   z-index: 30;
@@ -19,8 +20,8 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px clamp(16px, 4vw, 48px);
-  background: rgb(246 239 230 / 0.9);
-  backdrop-filter: blur(10px);
+  background: rgb(243 235 225 / 0.94);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -31,25 +32,24 @@
   padding: 0 14px;
   border-radius: 999px;
   border: 1.5px solid var(--esp);
-  font-weight: 700;
+  font-weight: 750;
   font-size: 14px;
   background: transparent;
   color: var(--esp);
 }
 
 .dala__nav {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px 24px;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 18px clamp(16px, 4vw, 56px) 8px;
+  padding: 20px clamp(16px, 4vw, 56px) 8px;
 }
 
 .dala__logo {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(26px, 3vw, 32px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: clamp(28px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .dala__logo i {
@@ -63,7 +63,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .dala__menu li.is-on {
@@ -77,24 +78,24 @@
   padding: 0 22px;
   background: var(--esp);
   color: #fff;
-  font-weight: 700;
+  font-weight: 750;
   cursor: pointer;
+  justify-self: end;
 }
 
 .dala__hero {
   display: grid;
-  gap: 28px;
-  padding: 18px clamp(16px, 4vw, 56px) 48px;
+  gap: 32px;
+  padding: 24px clamp(16px, 4vw, 56px) 56px;
   align-items: center;
 }
 
 .dala__hero h1 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: clamp(42px, 7vw, 74px);
+  font-weight: 800;
+  font-size: clamp(40px, 6.4vw, 68px);
+  letter-spacing: -0.045em;
   line-height: 1.02;
-  letter-spacing: -0.02em;
 }
 
 .dala__hero h1 .line {
@@ -113,9 +114,11 @@
 
 .dala__hero p {
   margin: 18px 0 0;
-  max-width: 42ch;
+  max-width: 40ch;
   color: var(--muted);
   font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .dala__actions {
@@ -126,12 +129,12 @@
 }
 
 .dala__btn {
-  min-height: 48px;
+  min-height: 50px;
   display: inline-flex;
   align-items: center;
   padding: 0 22px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 750;
   border: 0;
   cursor: pointer;
   text-decoration: none;
@@ -149,9 +152,9 @@
 }
 
 .dala__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   margin-top: 36px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
@@ -159,18 +162,20 @@
 
 .dala__meta b {
   display: block;
-  font-family: Georgia, serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .dala__meta small {
   color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .dala__visual {
   position: relative;
-  min-height: 420px;
+  min-height: 460px;
   border-radius: 28px;
   overflow: hidden;
   background:
@@ -241,6 +246,7 @@
   border-radius: 18px;
   padding: 14px 16px;
   box-shadow: 0 18px 40px rgb(43 29 20 / 0.18);
+  max-width: calc(100% - 36px);
 }
 
 .dala__float-dot {
@@ -252,32 +258,43 @@
   display: grid;
   place-items: center;
   font-weight: 800;
+  flex: none;
 }
 
 .dala__float b {
   display: block;
   font-size: 15px;
+  font-weight: 750;
 }
 
 .dala__float small {
   color: var(--muted);
   font-size: 13px;
+  font-weight: 600;
 }
 
-.dala__menu-section {
-  padding: 20px clamp(16px, 4vw, 56px) 72px;
+.dala__section {
+  padding: 28px clamp(16px, 4vw, 56px) 40px;
 }
 
-.dala__menu-section h2 {
-  margin: 0 0 18px;
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: clamp(36px, 5vw, 56px);
+.dala__section h2 {
+  margin: 0 0 8px;
+  font-size: clamp(34px, 4.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
-.dala__menu-section h2 em {
+.dala__section h2 em {
   font-style: normal;
   color: var(--accent);
+}
+
+.dala__section-lead {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 48ch;
 }
 
 .dala__tabs {
@@ -288,12 +305,12 @@
 }
 
 .dala__tab {
-  min-height: 44px;
+  min-height: 46px;
   padding: 0 18px;
   border-radius: 999px;
   border: 1.5px solid var(--line);
-  background: transparent;
-  font-weight: 700;
+  background: var(--paper);
+  font-weight: 750;
   cursor: pointer;
   color: var(--esp);
 }
@@ -313,7 +330,7 @@
   background: var(--paper);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 1px 2px rgb(43 29 20 / 0.05);
+  border: 1px solid rgb(217 203 184 / 0.7);
 }
 
 .dala__pic {
@@ -329,15 +346,16 @@
 
 .dala__item-body h3 {
   margin: 0;
-  font-family: Georgia, serif;
-  font-weight: 400;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.03em;
 }
 
 .dala__item-body p {
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 15px;
+  font-weight: 600;
 }
 
 .dala__row {
@@ -349,6 +367,7 @@
 
 .dala__row b {
   font-size: 20px;
+  font-weight: 800;
 }
 
 .dala__add {
@@ -362,9 +381,108 @@
   cursor: pointer;
 }
 
+.dala__booking {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.dala__days,
+.dala__times {
+  display: grid;
+  gap: 8px;
+}
+
+.dala__days {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.dala__times {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dala__day,
+.dala__time {
+  min-height: 56px;
+  border-radius: 14px;
+  border: 1.5px solid var(--line);
+  background: var(--cream);
+  font-weight: 750;
+  cursor: pointer;
+  color: var(--esp);
+}
+
+.dala__day.is-on,
+.dala__time.is-on {
+  background: var(--esp);
+  color: #fff;
+  border-color: var(--esp);
+}
+
+.dala__day small {
+  display: block;
+  font-size: 12px;
+  font-weight: 650;
+  opacity: 0.8;
+}
+
+.dala__atmosphere {
+  display: grid;
+  gap: 14px;
+}
+
+.dala__atmos-card {
+  min-height: 180px;
+  border-radius: 22px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  background: linear-gradient(160deg, #5a3a28, #1c120c);
+}
+
+.dala__atmos-card:nth-child(2) {
+  background: linear-gradient(160deg, #8a5a3a, #3a2418);
+}
+
+.dala__atmos-card:nth-child(3) {
+  background: linear-gradient(160deg, #b85a33, #4a2818);
+}
+
+.dala__atmos-card b {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.dala__atmos-card span {
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+.dala__footer {
+  margin-top: 24px;
+  padding: 28px clamp(16px, 4vw, 56px) 96px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  color: var(--muted);
+  font-weight: 650;
+}
+
 @media (min-width: 900px) {
+  .dala__nav {
+    grid-template-columns: auto 1fr auto;
+  }
+
   .dala__menu {
     display: flex;
+    justify-content: center;
   }
 
   .dala__hero {
@@ -374,6 +492,25 @@
 
   .dala__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dala__booking {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+
+  .dala__atmosphere {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dala__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .dala__days {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
