@@ -20,7 +20,7 @@ export function Hub() {
     const root = heroRef.current;
     if (!root) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const lines = root.querySelectorAll<HTMLElement>(".hub__title .line span");
+    const lines = root.querySelectorAll<HTMLElement>(".hub__title .hub-line");
     const rest = root.querySelectorAll<HTMLElement>(".hub-fade");
     if (reduced) {
       gsap.set([lines, rest], { clearProps: "all" });
@@ -28,8 +28,8 @@ export function Hub() {
     }
     gsap.fromTo(
       lines,
-      { yPercent: 110 },
-      { yPercent: 0, duration: 0.85, stagger: 0.08, ease: "power3.out" },
+      { y: 28, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, stagger: 0.09, ease: "power3.out" },
     );
     gsap.fromTo(
       rest,
@@ -72,16 +72,10 @@ export function Hub() {
       <section className="hub__hero" ref={heroRef}>
         <p className="hub__eyebrow hub-fade">Студенческая команда · МИТУ · Алматы</p>
         <h1 className="hub__title">
-          <span className="line">
-            <span>Сайты и боты,</span>
-          </span>
-          <span className="line">
-            <span>которые</span>
-          </span>
-          <span className="line">
-            <span>
-              <em>продают</em> за вас
-            </span>
+          <span className="hub-line">Сайты и боты,</span>
+          <span className="hub-line">которые</span>
+          <span className="hub-line">
+            <em>продают</em> за вас
           </span>
         </h1>
         <p className="hub__lead hub-fade">
