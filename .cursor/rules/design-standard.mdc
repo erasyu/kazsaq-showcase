@@ -1,0 +1,14 @@
+---
+description: Premium design and 3D standard for this project
+alwaysApply: true
+---
+
+# Design standard (always on)
+
+For ANY task that touches UI, UX, styling, layout, animation, a web page, a component, or 3D:
+
+1. First read and follow the `design-director` skill (`~/.cursor/skills/design-director/SKILL.md`). It defines the pipeline and routes to the specialist skills.
+2. Respect `DESIGN.md` at the project root as the source of truth for tokens (colour, type, spacing, radius, motion). Create it with the design-director pipeline if it is missing; update it when the direction changes.
+3. Quality floor: clear hierarchy, one primary action per screen, 16px+ body text, 4.5:1 contrast, 44px touch targets, visible focus, keyboard support, `prefers-reduced-motion`, loading/empty/error states, no emoji icons, no placeholder code.
+4. 3D: prefer free CC0 assets (3dassets MCP, Poly Haven), then Blender MCP, then free AI generation; always optimise with `web-3d-pipeline` before shipping.
+5. Before saying "done": open the page in the browser tools, check desktop (1440) and mobile (390) screenshots, fix what you see (one fix pass, one confirm pass).
