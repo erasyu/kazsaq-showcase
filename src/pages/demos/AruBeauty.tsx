@@ -41,9 +41,9 @@ export function AruBeauty() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
     gsap.fromTo(
-      root.querySelectorAll("h1 .line span"),
-      { yPercent: 115 },
-      { yPercent: 0, duration: 0.88, stagger: 0.08, ease: "power3.out" },
+      root.querySelectorAll("h1 .line"),
+      { y: 24, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, stagger: 0.08, ease: "power3.out" },
     );
     gsap.fromTo(
       root.querySelectorAll(".aru-fade"),
@@ -75,17 +75,11 @@ export function AruBeauty() {
         <div>
           <p className="aru__kicker aru-fade">{brand.city}</p>
           <h1>
+            <span className="line">{brand.name}</span>
             <span className="line">
-              <span>{brand.name}</span>
+              запись без <em>ночных</em>
             </span>
-            <span className="line">
-              <span>
-                запись без <em>ночных</em>
-              </span>
-            </span>
-            <span className="line">
-              <span>ответов в Direct</span>
-            </span>
+            <span className="line">ответов в Direct</span>
           </h1>
           <p className="aru-fade">{brand.tagline}</p>
           <div className="aru__actions aru-fade">

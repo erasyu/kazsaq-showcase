@@ -64,11 +64,6 @@
 
 .aru__hero h1 .line {
   display: block;
-  overflow: hidden;
-}
-
-.aru__hero h1 .line span {
-  display: inline-block;
 }
 
 .aru__hero h1 em {

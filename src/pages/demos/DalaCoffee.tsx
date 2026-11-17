@@ -55,9 +55,9 @@ export function DalaCoffee() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
     gsap.fromTo(
-      root.querySelectorAll("h1 .line span"),
-      { yPercent: 115 },
-      { yPercent: 0, duration: 0.9, stagger: 0.09, ease: "power3.out" },
+      root.querySelectorAll("h1 .line"),
+      { y: 24, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, stagger: 0.09, ease: "power3.out" },
     );
     gsap.fromTo(
       root.querySelectorAll(".dala-fade"),
@@ -107,13 +107,9 @@ export function DalaCoffee() {
       <section className="dala__hero" ref={heroRef}>
         <div>
           <h1>
+            <span className="line">Кофе, который</span>
             <span className="line">
-              <span>Кофе, который</span>
-            </span>
-            <span className="line">
-              <span>
-                гости <em>находят сами</em>
-              </span>
+              гости <em>находят сами</em>
             </span>
           </h1>
           <p className="dala-fade">{brand.tagline}</p>
