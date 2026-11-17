@@ -76,12 +76,12 @@ export function Hub() {
             <span>Сайты и боты,</span>
           </span>
           <span className="line">
-            <span>
-              которые <em>продают</em>
-            </span>
+            <span>которые</span>
           </span>
           <span className="line">
-            <span>за вас</span>
+            <span>
+              <em>продают</em> за вас
+            </span>
           </span>
         </h1>
         <p className="hub__lead hub-fade">

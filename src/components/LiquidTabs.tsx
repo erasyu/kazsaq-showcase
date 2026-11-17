@@ -40,10 +40,10 @@ export function LiquidTabs({ tabs, activeId, onChange, className }: Props) {
       return;
     }
 
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.to(blob, { x, width: Math.max(w * 1.08, w + 10), duration: 0.28 }, 0)
-      .to(blob, { scaleY: 1.18, borderRadius: "40% 40% 46% 46%", duration: 0.22 }, 0)
-      .to(blob, { x, y, width: w, height: h, scaleX: 1, scaleY: 1, borderRadius: 999, duration: 0.36 }, 0.18);
+    gsap
+      .timeline({ defaults: { ease: "power3.out" } })
+      .to(blob, { x, width: w * 1.1, scaleY: 0.88, duration: 0.2 }, 0)
+      .to(blob, { x, y, width: w, height: h, scaleX: 1, scaleY: 1, borderRadius: 999, duration: 0.32 }, 0.12);
   };
 
   useLayoutEffect(() => {

@@ -85,14 +85,17 @@
 
 .hub__title {
   margin: 0;
-  max-width: 13ch;
-  font-size: clamp(44px, 7.2vw, 84px);
+  max-width: min(100%, 16ch);
+  font-size: clamp(40px, 6.4vw, 76px);
   font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .hub__title .line {
   display: block;
   overflow: hidden;
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
 }
 
 .hub__title .line span {
